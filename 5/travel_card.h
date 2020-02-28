@@ -4,6 +4,12 @@
 
 int languange;
 
+struct card c;
+struct price p;
+struct stamper stamp;
+char name[50];
+double start_money;
+
 struct price {
     double inner;
     double outer;
@@ -33,3 +39,6 @@ void print_last_stamping_info(struct stamper *s);
 
 void travel_func(struct card *c, double price, struct stamper *stamp);
 
+void get_user_info();
+
+void change_languange();

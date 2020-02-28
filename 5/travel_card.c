@@ -3,9 +3,7 @@
 #include "strings.h"
 
 int  main(int argc, char **argv){
-  struct card c;
-  struct price p;
-  struct stamper stamp;
+
   if(argv[1] == NULL){
     printf("ERROR: no languange given \n");
     return 1;
@@ -34,6 +32,19 @@ void print_last_stamping_info(struct stamper *s){
   printf(strings[languange][10], s->stamps[s->amount_of_stamps-1]->name);
   printf(strings[languange][11], s->time_info->tm_mday, s->time_info->tm_mon +1, s->time_info->tm_year + 1900, s->time_info->tm_hour, s->time_info->tm_min, s->time_info->tm_sec);
   printf(strings[languange][12], s->stamps[s->amount_of_stamps-1]->cur_money);
+}
+
+void get_user_info(){
+ printf(strings[languange][7]);
+ fgets(name, 50, stdin);
+ printf(strings[languange][8]);
+ scanf("%f", &start_money);
+ c = create_card(start_money, name);
+ return;
+}
+
+void change_languange(){
+  languange = (languange == 0) ? 1 : 0;
 }
 
 struct card create_card(double money, char name[25]){

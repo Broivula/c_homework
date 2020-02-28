@@ -17,11 +17,11 @@ void menu_cycle(){
         getchar();
 
         switch(user_action){
-        case '1': {break;}
+        case '1': {get_user_info();break;}
         case '2': {break;}
         case '3': {break;}
         case '4': {break;}
-        case '5': {break;}
+        case '5': {change_languange();break;}
         case '6': {break;}
         }
 
