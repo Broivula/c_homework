@@ -8,9 +8,22 @@ void menu_cycle(){
 
     char user_action;
 
-    for (int i = 0; i < 6; i++){
-      printf(strings[languange][i]);
-    }
+    do{
+        printf("inside the do while loop, but outside for \n");
+        for (int i = 0; i < 7; i++){
+          printf(strings[languange][i]);
+        }
+        user_action = getchar();
+        getchar();
 
+        switch(user_action){
+        case '1': {break;}
+        case '2': {break;}
+        case '3': {break;}
+        case '4': {break;}
+        case '5': {break;}
+        case '6': {break;}
+        }
 
+    }while(user_action != '6');
 }
