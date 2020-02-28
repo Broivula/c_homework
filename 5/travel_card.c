@@ -1,4 +1,6 @@
 #include "travel_card.h"
+#include "menu.h"
+#include "strings.h"
 
 int  main(int argc, char **argv){
   struct card c;
@@ -12,11 +14,11 @@ int  main(int argc, char **argv){
   p = create_prices(2.5, 3.8);
   c = create_card(12.0, "Elias Koivula");
   stamp = create_stamper(travel_func);
-  printf("card created and holds %.2f euros\n",c.cur_money); 
+//  printf("card created and holds %.2f euros\n",c.cur_money); 
   stamp.travelling_function(&c, p.outer, &stamp);
-  printf("cur money is %.2f \n", c.cur_money);
-  print_last_stamping_info(&stamp);
-  printf("%s", strings[0][0]);
+//  printf("cur money is %.2f \n", c.cur_money);
+//  print_last_stamping_info(&stamp);
+  menu_cycle();
   return 0;
 }
 
