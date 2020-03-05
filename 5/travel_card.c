@@ -21,11 +21,15 @@ int  main(int argc, char **argv){
 }
 
 void travel_func(struct card *c, double price, struct stamper *stamp){
-  printf("card being used, cost: %.2f \n", price);
-  c->cur_money = c->cur_money - price;
-  stamp->time_info = get_timestamp();
-  stamp->stamps[stamp->amount_of_stamps] = c;
-  stamp->amount_of_stamps += 1;
+  if(c->cur_money > price){
+    printf("card being used, cost: %.2f \n", price);
+    c->cur_money = c->cur_money - price;
+    stamp->time_info = get_timestamp();
+    stamp->stamps[stamp->amount_of_stamps] = c;
+    stamp->amount_of_stamps += 1;
+  }else{
+    printf(strings[languange][15]);
+  }
 }
 
 void print_last_stamping_info(struct stamper *s){
@@ -54,6 +58,12 @@ void init_travel(){
   case '2' : {travel_func(&c,p.outer,&stamp);break;}
   default: printf("error: invalid input \n");
   }
+}
+
+void insert_money(){
+  printf(strings[languange][8]);
+  scanf("%lf", &start_money);
+  c.cur_money += start_money;
 }
 
 struct card create_card(double money, char name[25]){

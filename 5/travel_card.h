@@ -44,4 +44,6 @@ void travel_func(struct card *c, double price, struct stamper *stamp);
 
 void get_user_info();
 
+void insert_money();
+
 void change_languange();
