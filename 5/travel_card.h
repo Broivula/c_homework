@@ -2,13 +2,14 @@
 #include <time.h>
 #include <string.h>
 
-int languange;
-
+unsigned int languange;
 struct card c;
 struct price p;
 struct stamper stamp;
 char name[50];
 double start_money;
+
+
 
 struct price {
     double inner;
@@ -36,6 +37,8 @@ struct price create_prices(double inner, double outer);
 struct card create_card(double money, char name[25]);
 
 void print_last_stamping_info(struct stamper *s);
+
+void init_travel();
 
 void travel_func(struct card *c, double price, struct stamper *stamp);
 

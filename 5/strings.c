@@ -3,7 +3,7 @@
 char strings[2][30][100] = {
     // english
     {
-        {"\t\t---------- MENU ----------\n\n"},
+        {"\n\n\t\t---------- MENU ----------\n\n"},
         {"1) create a card\n"},
         {"2) insert money into card \n"},
         {"3) travel \n"},
@@ -22,7 +22,7 @@ char strings[2][30][100] = {
     },
     // finnish
     {
-      {"\t\t---------- VALIKKO ----------\n\n"},
+      {"\n\n\t\t---------- VALIKKO ----------\n\n"},
       {"1) luo kortti \n"},
       {"2) pistä rahaa kortille \n"},
       {"3) matkusta \n"},

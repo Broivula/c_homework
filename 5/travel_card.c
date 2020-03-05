@@ -29,22 +29,31 @@ void travel_func(struct card *c, double price, struct stamper *stamp){
 }
 
 void print_last_stamping_info(struct stamper *s){
-  printf(strings[languange][10], s->stamps[s->amount_of_stamps-1]->name);
-  printf(strings[languange][11], s->time_info->tm_mday, s->time_info->tm_mon +1, s->time_info->tm_year + 1900, s->time_info->tm_hour, s->time_info->tm_min, s->time_info->tm_sec);
-  printf(strings[languange][12], s->stamps[s->amount_of_stamps-1]->cur_money);
+  printf(strings[languange][11], s->stamps[s->amount_of_stamps-1]->name);
+  printf(strings[languange][12], s->time_info->tm_mday, s->time_info->tm_mon +1, s->time_info->tm_year + 1900, s->time_info->tm_hour, s->time_info->tm_min, s->time_info->tm_sec);
+  printf(strings[languange][13], s->stamps[s->amount_of_stamps-1]->cur_money);
 }
 
 void get_user_info(){
  printf(strings[languange][7]);
  fgets(name, 50, stdin);
  printf(strings[languange][8]);
- scanf("%f", &start_money);
+ scanf("%lf", &start_money);
+ printf("starting money %f", start_money);
  c = create_card(start_money, name);
- return;
 }
 
 void change_languange(){
   languange = (languange == 0) ? 1 : 0;
+}
+
+void init_travel(){
+  printf(strings[languange][9]);
+  switch(getchar()){
+  case '1' : {travel_func(&c,p.inner,&stamp);break;} 
+  case '2' : {travel_func(&c,p.outer,&stamp);break;}
+  default: printf("error: invalid input \n");
+  }
 }
 
 struct card create_card(double money, char name[25]){
