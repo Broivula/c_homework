@@ -10,14 +10,14 @@ int main(){
 
   string name;
   double money;
-  TravelCard *t_card;
+  std::unique_ptr<TravelCard> t_card; 
   cout << "starting now... " << endl;
   cout << "give me your name: " << endl;
   cin >> name;
   cout << "how much money?" << endl;
   cin >> money;
 
-  t_card = new TravelCard(name, money); 
-  cout << "..constructor done, let's see if we can access the pointer values: "<< t_card->getMoney() << t_card->getUsername() << endl;
+  t_card.reset(new TravelCard(name, money));
+  cout << "..constructor done, let's see if we can access the pointer values: " << t_card->getMoney() << " " << t_card->getUsername() << endl;
   cout << "done." << endl;
 }

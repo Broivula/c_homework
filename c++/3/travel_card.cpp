@@ -1,11 +1,13 @@
 #include "travel_card.h"
 #include <iostream>
+#include <memory>
 using std::string;
 using std::cout;
 using std::endl;
+using std::unique_ptr;
 
 // the constructor
-TravelCard::TravelCard(string _username, double _money) : username(new string(_username)), money(new double(_money))
+TravelCard::TravelCard(string _username, double _money) : username(unique_ptr<string>(new string(_username))), money(unique_ptr<double>(new double(_money)))
 {
   cout << "..constructing a travelcard for " << getUsername() <<  " with money " << getMoney() <<   endl;
 }
@@ -14,8 +16,8 @@ TravelCard::TravelCard(string _username, double _money) : username(new string(_u
 TravelCard::~TravelCard()
 {
   cout << "..destructor for travelcard object.. " << endl;
-  delete username;
-  delete money;
+  //delete username;
+  //delete money;
 }
 
 
