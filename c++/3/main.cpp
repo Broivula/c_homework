@@ -1,16 +1,20 @@
 #include <iostream>
 #include "travel_card.h"
-
+#include "stamper.h"
 using std::cin;
 using std::cout;
 using std::string;
 using std::endl;
-
+using std::unique_ptr;
 int main(){
 
   string name;
   double money;
-  std::unique_ptr<TravelCard> t_card; 
+  unique_ptr<TravelCard> t_card; 
+  unique_ptr<Stamper> stamper;
+
+  stamper.reset(new Stamper());
+
   cout << "starting now... " << endl;
   cout << "give me your name: " << endl;
   cin >> name;

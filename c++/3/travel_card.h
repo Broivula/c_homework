@@ -18,6 +18,8 @@ class TravelCard {
 
     // destructor
     virtual ~TravelCard();
+
+    // other
     string getUsername() { return *username; };
     double getMoney() { return *money; };
     void insertMoney(double amount) { *money += amount; };
