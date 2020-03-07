@@ -22,6 +22,9 @@ int main(){
   cin >> money;
 
   t_card.reset(new TravelCard(name, money));
-  cout << "..constructor done, let's see if we can access the pointer values: " << t_card->getMoney() << " " << t_card->getUsername() << endl;
-  cout << "done." << endl;
+  cout << "let's try the stamper:" << endl;
+
+  stamper->stamp(inner, &(*t_card));
+  
+  stamper->printStampedCards();
 }

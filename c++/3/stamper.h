@@ -1,17 +1,20 @@
 #include <iostream>
 #include <memory>
 #include "travel_card.h"
-enum Prices{
-  inner=2,
-  outer=3,
+#include <vector>
+
+enum prices{
+  inner=280,
+  outer=350,
 };
 
+using std::vector;
 using std::unique_ptr;
+
 class Stamper{
 
   private:
-    unique_ptr<TravelCard[]> stampedCards;
-
+    vector<TravelCard *> stampedCards;
   public:
     // constructor
     Stamper();
@@ -20,5 +23,9 @@ class Stamper{
     virtual ~Stamper();
 
     // other
-    void stamp(Prices p, TravelCard *t_card);
+    void registerStampedCard(TravelCard *t_card);
+    void stamp(prices p, TravelCard *t_card);
+    vector<TravelCard *> getStampedCards(){ return stampedCards; };
+    void printStampedCards();
+
 };

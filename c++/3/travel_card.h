@@ -1,9 +1,13 @@
 #pragma once
 #include <string>
 #include <memory>
+#include <string.h>
+#include <iostream>
 using std::string;
 using std::unique_ptr;
-
+using std::string;
+using std::to_string;
+using std::ostream;
 class TravelCard {
 
 
@@ -20,9 +24,15 @@ class TravelCard {
     virtual ~TravelCard();
 
     // other
-    string getUsername() { return *username; };
-    double getMoney() { return *money; };
+    const string NEWLINE;
+    string getUsername() const { return *username; };
+    double getMoney() const { return *money; };
     void insertMoney(double amount) { *money += amount; };
+    void negateMoney(double amount);
+
+    void toString();
+
+    friend ostream& operator<<(ostream& os, const TravelCard& t_card);
 };
 
 
