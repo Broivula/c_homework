@@ -6,9 +6,9 @@ class TravelCard {
 
 
   private:
-    std::string username;
-    double money;
-    std::string lastTimestamp;
+    std::string *username;
+    double *money;
+    std::string *lastTimestamp;
 
  public:
     // constructor
@@ -16,9 +16,9 @@ class TravelCard {
 
     // destructor
     ~TravelCard();
-    string getUsername() { return username; }
-    double getMoney() { return money; }
-    void insertMoney(double amount) = { money += amount; }
+    string getUsername() { return *username; };
+    double getMoney() { return *money; };
+    void insertMoney(double amount) { *money += amount; };
 };
 
 

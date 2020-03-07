@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 // the constructor
-TravelCard::TravelCard(string _username, double _money) : username(_username), money(_money)
+TravelCard::TravelCard(string _username, double _money) : username(new string(_username)), money(new double(_money))
 {
   cout << "..constructing a travelcard for " << getUsername() <<  " with money " << getMoney() <<   endl;
 }
@@ -14,6 +14,8 @@ TravelCard::TravelCard(string _username, double _money) : username(_username), m
 TravelCard::~TravelCard()
 {
   cout << "..destructor for travelcard object.. " << endl;
+  delete username;
+  delete money;
 }
 
 
