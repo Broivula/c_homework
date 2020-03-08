@@ -1,8 +1,7 @@
 #include <iostream>
 #include <memory>
-#include "travel_card.h"
 #include <vector>
-
+#include "travel_card.h"
 enum prices{
   inner=280,
   outer=350,
@@ -10,7 +9,6 @@ enum prices{
 
 using std::vector;
 using std::unique_ptr;
-
 class Stamper{
 
   private:
@@ -27,5 +25,7 @@ class Stamper{
     void stamp(prices p, TravelCard *t_card);
     vector<TravelCard *> getStampedCards(){ return stampedCards; };
     void printStampedCards();
+    char initiateTravel();
 
+    friend void operator<<(TravelCard& t_card, Stamper& st);
 };

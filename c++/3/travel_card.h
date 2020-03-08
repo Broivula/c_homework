@@ -1,4 +1,3 @@
-#pragma once
 #include <string>
 #include <memory>
 #include <string.h>
@@ -8,8 +7,8 @@ using std::unique_ptr;
 using std::string;
 using std::to_string;
 using std::ostream;
-class TravelCard {
 
+class TravelCard {
 
   private:
     unique_ptr<string> username;
@@ -32,7 +31,7 @@ class TravelCard {
 
     void toString();
 
-    friend ostream& operator<<(ostream& os, const TravelCard& t_card);
+    friend ostream& operator<<(ostream &os, const TravelCard &t_card);
 };
 
 

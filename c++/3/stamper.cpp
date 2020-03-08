@@ -1,6 +1,7 @@
 #include "stamper.h"
 #include <iostream>
 #include <memory>
+
 using std::string;
 using std::cout;
 using std::endl;
@@ -36,5 +37,25 @@ void Stamper::printStampedCards()
     for(std::vector<TravelCard *>::iterator it = stampedCards.begin(); it != stampedCards.end(); it++){
      cout << **(it) << endl;
     }
+}
+
+void operator<<(TravelCard& t_card, Stamper& st)
+{
+    switch(st.initiateTravel()){
+    case '1': st.stamp(inner, &t_card); 
+              break;
+    case '2': st.stamp(outer, &t_card);
+              break;
+
+    default: cout << "give me a proper response" << endl;
+    }
+}
+
+char Stamper::initiateTravel()
+{
+  cout << "are you travelling inner (1) or outer (2)?" << endl;
+  char x;
+  std::cin >> x;
+  return x;
 }
 

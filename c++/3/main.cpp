@@ -1,5 +1,4 @@
 #include <iostream>
-#include "travel_card.h"
 #include "stamper.h"
 using std::cin;
 using std::cout;
@@ -17,7 +16,7 @@ int main(){
 
   cout << "starting now... " << endl;
   cout << "give me your name: " << endl;
-  cin >> name;
+  getline(cin, name);
   cout << "how much money?" << endl;
   cin >> money;
 
@@ -27,4 +26,6 @@ int main(){
   stamper->stamp(inner, &(*t_card));
   
   stamper->printStampedCards();
+
+  *t_card << *stamper;
 }

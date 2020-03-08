@@ -2,6 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <memory>
+
 using std::string;
 using std::cout;
 using std::endl;
@@ -34,7 +35,8 @@ void TravelCard::toString(){
   cout << "\n ---------- \n" ;
 }
 
-ostream& operator<<(ostream& os, const TravelCard& t_card)
+
+ostream& operator<<(ostream &os, const TravelCard &t_card)
 {
   os << "\nusername: " << t_card.getUsername()<< "\nmoney left on account: " << t_card.getMoney() << "\n -----------" ;
   return os;
